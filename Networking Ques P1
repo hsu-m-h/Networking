@@ -1,0 +1,12 @@
+1.	Give an example of synchronous communication in telecommunication networks.
+Synchronous communication means sender and receiver communicate at the same time and stay synchronized with a clock or timing signal. 
+
+Example; Telephone call, Video call, Real-time voice communication
+Both sides send and receive data continuously and simultaneously.
+
+2.	In a layered communication protocol, the lower layer adds information (e.g. addresses, check sums) to the data provided by the higher layer. 
+Is this statement true or is it the other way round? Give a reason for your answer.
+In a layered model like OSI, each layer performs a process called Encapsulation.
+When data moves from a higher layer to a lower layer treats the entire higher-layer packet as ‘data’ and wraps it owns information around it.
+-	Headers: Added to the front (e.g., IP addresses at the Network layer)
+-	Trailers: Added to the end (e.g., Checksums at the Data Link layer to detect errors)

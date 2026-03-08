@@ -1,0 +1,60 @@
+1.	Give an example of synchronous communication in telecommunication networks.
+Synchronous communication means sender and receiver communicate at the same time and stay synchronized with a clock or timing signal. 
+
+Example; Telephone call, Video call, Real-time voice communication
+Both sides send and receive data continuously and simultaneously.
+
+2.	In a layered communication protocol, the lower layer adds information (e.g. addresses, check sums) to the data provided by the higher layer. Is this statement true or is it the other way round? Give a reason for your answer.
+In a layered model like OSI, each layer performs a process called Encapsulation. When data moves from a higher layer to a lower layer treats the entire higher-layer packet as ‘data’ and wraps it owns information around it.
+-	Headers: Added to the front (e.g., IP addresses at the Network layer)
+-	Trailers: Added to the end (e.g., Checksums at the Data Link layer to detect errors)
+
+
+1. THE CORE THEORY (The "Must-Know" Concepts)
+A. The OSI Model & Data Encapsulation
+The exam focuses on how data changes as it moves through layers.
+•	Encapsulation (Sending): Higher layers pass data to lower layers. Each lower layer adds a Header (Control info). The Data Link layer also adds a Trailer (Error checking).
+•	Decapsulation (Receiving): The process is reversed. Each layer strips off its header.
+•	Data Units (PDUs):
+o	Transport: Segment
+o	Network: Packet
+o	Data Link: Frame
+o	Physical: Bits
+B. Hardware: Routers vs. Switches
+•	Switch (Layer 2): Connects devices on the same local network (LAN). It uses MAC Addresses and a "MAC Table."
+•	Router (Layer 3): Connects different networks. It uses IP Addresses and a "Routing Table."
+C. Protocols: TCP vs. UDP
+•	TCP (Transmission Control Protocol): Connection-oriented. Uses a 3-way handshake. Reliable (retransmits lost data). Used for Web, Email.
+•	UDP (User Datagram Protocol): Connectionless. Fast. No retransmission. Used for VoIP, Streaming, Gaming.
+D. Transmission & Synchronization
+•	Synchronous: Sender and Receiver share a Common Clock. Very fast, constant stream.
+•	Asynchronous: No shared clock. Uses Start/Stop bits to tell the receiver when data starts/ends.
+________________________________________
+2. EXAM QUESTION BANK (10 Essential Patterns)
+Q1: What is the main purpose of the Trailer in a Data Link Frame?
+•	Answer: To provide a Checksum (CRC) for error detection. If the bits change during transmission, the trailer allows the receiver to detect the corruption.
+Q2: Which layer is responsible for end-to-end flow control and error recovery?
+•	Answer: Layer 4 (Transport Layer), specifically using the TCP protocol.
+Q3: Is an IP address permanent?
+•	Answer: No. An IP address is Logical and can change. The MAC Address is the physical, permanent address of the hardware.
+Q4: What happens if a router receives a packet with an unknown destination IP?
+•	Answer: It checks its Routing Table. If no route exists, it sends the packet to its "Default Gateway" or drops it.
+Q5: Why is Synchronous transmission more efficient for large files?
+•	Answer: It has less overhead. It doesn't need to add start/stop bits to every byte, saving bandwidth for actual data.
+Q6: Trace the path: A packet moves from the Network Layer to the Data Link Layer. What is added?
+•	Answer: A MAC Header (source/destination MAC) and a Trailer (CRC).
+Q7: Which device reduces "Collision Domains" by using MAC addresses?
+•	Answer: A Switch. (Unlike a Hub, which broadcasts to everyone).
+Q8: What are the three steps of the TCP Handshake?
+•	Answer: SYN -> SYN-ACK -> ACK.
+Q9: Does the Physical Layer understand IP addresses?
+•	Answer: No. The Physical Layer only understands Bits (electrical signals, light pulses, or radio waves).
+Q10: What is the difference between a Packet and a Frame?
+•	Answer: A Packet is the data unit at the Network Layer (contains IP). A Frame is that packet encapsulated at the Data Link Layer (contains MAC).
+
+
+Feature	   Synchronous	        Asynchronous
+Timing	  Shared Clock	        Start/Stop Bits
+Speed	  High	                Low/Medium
+Usage	  Telephony/Fiber	    Serial/Keyboards
+
